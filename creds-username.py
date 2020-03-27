@@ -6,7 +6,7 @@ import sys
 urllib3.disable_warnings()
 
 username=''
-password='h3mXK8RhU~f{]f5H'
+password='pass'
 u='http://example.com'
 headers={'content-type': 'application/x-www-form-urlencoded'}
 
